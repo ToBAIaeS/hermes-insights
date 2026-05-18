@@ -6,7 +6,16 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "test": "jest --ci --forceExit",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --ci --coverage --forceExit",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx}' 'app/**/*.{ts,tsx}' 'App.tsx'",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx}' 'app/**/*.{ts,tsx}' 'App.tsx'",
+    "typecheck": "tsc --noEmit",
+    "check-all": "npm run typecheck && npm run lint && npm run format:check && npm run test"
   },
   "dependencies": {
     "@react-navigation/native": "^7.2.4",
@@ -28,7 +37,24 @@
     "zustand": "^5.0.13"
   },
   "devDependencies": {
+    "@expo/metro-config": "^55.0.21",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^13.3.3",
+    "@types/jest": "^30.0.0",
     "@types/react": "~19.1.0",
+    "@types/react-test-renderer": "^19.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.4",
+    "@typescript-eslint/parser": "^8.59.4",
+    "babel-jest": "^30.4.1",
+    "babel-preset-expo": "^55.0.21",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-native": "^5.0.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.3",
+    "react-test-renderer": "^19.2.6",
     "typescript": "~5.9.2"
   },
   "private": true
