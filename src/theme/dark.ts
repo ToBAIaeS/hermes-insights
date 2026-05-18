@@ -27,21 +27,66 @@ export const darkTheme: MD3Theme = {
   },
   fonts: configureFonts({
     config: {
-      displayLarge: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '400' as const },
-      displayMedium: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '400' as const },
-      displaySmall: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '400' as const },
-      headlineLarge: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      headlineMedium: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      headlineSmall: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      bodyLarge: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '400' as const },
-      bodyMedium: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '400' as const },
-      bodySmall: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '400' as const },
-      labelLarge: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      labelMedium: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      labelSmall: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      titleLarge: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      titleMedium: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
-      titleSmall: { fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto', fontWeight: '500' as const },
+      displayLarge: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '400' as const,
+      },
+      displayMedium: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '400' as const,
+      },
+      displaySmall: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '400' as const,
+      },
+      headlineLarge: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      headlineMedium: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      headlineSmall: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      bodyLarge: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '400' as const,
+      },
+      bodyMedium: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '400' as const,
+      },
+      bodySmall: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '400' as const,
+      },
+      labelLarge: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      labelMedium: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      labelSmall: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      titleLarge: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      titleMedium: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
+      titleSmall: {
+        fontFamily: Platform.OS === 'ios' ? 'System' : 'Roboto',
+        fontWeight: '500' as const,
+      },
     },
   }),
 };

@@ -11,7 +11,7 @@ export class HermesClient {
     this.client = axios.create({
       baseURL: baseUrl,
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       timeout: 15000,

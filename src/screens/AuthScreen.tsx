@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Alert, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { Text, TextInput, Button, Card, HelperText, Divider, Snackbar } from 'react-native-paper';
 import { HermesClient } from '../api/hermes';
 import { HonchoClient } from '../api/honcho';
@@ -74,7 +74,7 @@ export default function AuthScreen() {
         await setHonchoCredentials(honchoUrl, honchoApiKey);
       }
       showSnack('Credentials gespeichert!');
-    } catch (err) {
+    } catch {
       showSnack('Fehler beim Speichern');
     } finally {
       setLoading(false);
@@ -120,9 +120,7 @@ export default function AuthScreen() {
             {hermesValid === false && (
               <HelperText type="error">Verbindung fehlgeschlagen</HelperText>
             )}
-            {hermesValid === true && (
-              <HelperText type="info">Verbindung erfolgreich</HelperText>
-            )}
+            {hermesValid === true && <HelperText type="info">Verbindung erfolgreich</HelperText>}
             <Button
               mode="outlined"
               onPress={testHermes}
@@ -163,9 +161,7 @@ export default function AuthScreen() {
             {honchoValid === false && (
               <HelperText type="error">Verbindung fehlgeschlagen</HelperText>
             )}
-            {honchoValid === true && (
-              <HelperText type="info">Verbindung erfolgreich</HelperText>
-            )}
+            {honchoValid === true && <HelperText type="info">Verbindung erfolgreich</HelperText>}
             <Button
               mode="outlined"
               onPress={testHoncho}
@@ -189,11 +185,7 @@ export default function AuthScreen() {
         </Button>
       </ScrollView>
 
-      <Snackbar
-        visible={snackVisible}
-        onDismiss={() => setSnackVisible(false)}
-        duration={3000}
-      >
+      <Snackbar visible={snackVisible} onDismiss={() => setSnackVisible(false)} duration={3000}>
         {snackMsg}
       </Snackbar>
     </KeyboardAvoidingView>
@@ -201,39 +193,39 @@ export default function AuthScreen() {
 }
 
 const styles = StyleSheet.create({
+  card: {
+    backgroundColor: '#1E1E1E',
+    marginBottom: 16,
+  },
   container: {
-    flex: 1,
     backgroundColor: '#121212',
+    flex: 1,
+  },
+  divider: {
+    marginVertical: 8,
+  },
+  input: {
+    backgroundColor: '#2C2C2C',
+    marginBottom: 12,
+  },
+  saveBtn: {
+    marginTop: 16,
+    paddingVertical: 4,
   },
   scrollContent: {
     padding: 20,
     paddingTop: 60,
   },
-  title: {
-    color: '#6EC6FF',
-    fontWeight: '700',
-    marginBottom: 4,
-  },
   subtitle: {
     color: '#9E9E9E',
     marginBottom: 24,
   },
-  card: {
-    marginBottom: 16,
-    backgroundColor: '#1E1E1E',
-  },
-  input: {
-    marginBottom: 12,
-    backgroundColor: '#2C2C2C',
-  },
   testBtn: {
     marginTop: 4,
   },
-  divider: {
-    marginVertical: 8,
-  },
-  saveBtn: {
-    marginTop: 16,
-    paddingVertical: 4,
+  title: {
+    color: '#6EC6FF',
+    fontWeight: '700',
+    marginBottom: 4,
   },
 });

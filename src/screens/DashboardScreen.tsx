@@ -28,7 +28,9 @@ export default function DashboardScreen() {
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
       contentContainerStyle={styles.content}
     >
-      <Text variant="headlineMedium" style={styles.title}>Dashboard</Text>
+      <Text variant="headlineMedium" style={styles.title}>
+        Dashboard
+      </Text>
 
       <Card style={styles.card} mode="elevated">
         <Card.Title title="System Health" />
@@ -88,14 +90,16 @@ export default function DashboardScreen() {
           ) : sessions.error ? (
             <Text style={styles.error}>{sessions.error}</Text>
           ) : sessions.data && sessions.data.length > 0 ? (
-            sessions.data.slice(0, 5).map((s: Record<string, unknown>, i: number) => (
+            (sessions.data as Record<string, unknown>[]).slice(0, 5).map((s, i) => (
               <React.Fragment key={i}>
                 <List.Item
                   title={String(s.model ?? s.id ?? `Session ${i + 1}`)}
                   description={String(s.created_at ?? '')}
                   left={(props) => <List.Icon {...props} icon="chat" />}
                 />
-                {i < Math.min(sessions.data.length, 5) - 1 && <Divider />}
+                {i < Math.min((sessions.data as Record<string, unknown>[]).length, 5) - 1 && (
+                  <Divider />
+                )}
               </React.Fragment>
             ))
           ) : (
@@ -108,40 +112,40 @@ export default function DashboardScreen() {
 }
 
 const styles = StyleSheet.create({
+  card: {
+    backgroundColor: '#1E1E1E',
+    marginBottom: 16,
+  },
   container: {
-    flex: 1,
     backgroundColor: '#121212',
+    flex: 1,
   },
   content: {
     padding: 16,
     paddingTop: 50,
+  },
+  error: {
+    color: '#CF6679',
+  },
+  label: {
+    color: '#9E9E9E',
+    fontWeight: '500',
+  },
+  muted: {
+    color: '#9E9E9E',
+  },
+  row: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 4,
   },
   title: {
     color: '#6EC6FF',
     fontWeight: '700',
     marginBottom: 16,
   },
-  card: {
-    marginBottom: 16,
-    backgroundColor: '#1E1E1E',
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 4,
-  },
-  label: {
-    color: '#9E9E9E',
-    fontWeight: '500',
-  },
   value: {
     color: '#E0E0E0',
-  },
-  muted: {
-    color: '#9E9E9E',
-  },
-  error: {
-    color: '#CF6679',
   },
 });

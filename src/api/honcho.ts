@@ -11,7 +11,7 @@ export class HonchoClient {
     this.client = axios.create({
       baseURL: baseUrl,
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       timeout: 15000,
@@ -65,7 +65,9 @@ export class HonchoClient {
 
   // Messages
   async getMessages(peerId: string, sessionId: string, params?: { page?: number }) {
-    const { data } = await this.client.get(`/v1/peers/${peerId}/sessions/${sessionId}/messages`, { params });
+    const { data } = await this.client.get(`/v1/peers/${peerId}/sessions/${sessionId}/messages`, {
+      params,
+    });
     return data;
   }
 

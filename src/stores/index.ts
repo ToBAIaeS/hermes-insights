@@ -74,7 +74,7 @@ interface HermesState {
   fetchHealth: () => Promise<void>;
 }
 
-export const useHermesStore = create<HermesState>((set, get) => ({
+export const useHermesStore = create<HermesState>((set, _get) => ({
   stats: { data: null, loading: false, error: null },
   sessions: { data: null, loading: false, error: null },
   health: { data: null, loading: false, error: null },

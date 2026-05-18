@@ -9,13 +9,9 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@app/(.*)$': '<rootDir>/app/$1',
   },
-  setupFilesAfterSetup: ['./jest.setup.ts'],
+  setupFiles: ['./jest.setup.ts'],
   transformIgnorePatterns: [
     'node_modules/(?!(react-native|@react-native|expo|@expo|react-native-paper|@callstack|zustand)/)',
   ],
-  collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.d.ts',
-    '!src/types/**',
-  ],
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts', '!src/types/**'],
 };

@@ -1,15 +1,15 @@
 import { NavigationContainer, DarkTheme as NavDarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { PaperProvider, adaptNavigationTheme } from 'react-native-paper';
-import { useAuthStore } from '../stores';
-import { darkTheme } from '../theme';
-import AuthScreen from '../screens/AuthScreen';
-import DashboardScreen from '../screens/DashboardScreen';
+import { useAuthStore } from '@/stores';
+import { darkTheme } from '@/theme';
+import AuthScreen from '@/screens/AuthScreen';
+import DashboardScreen from '@/screens/DashboardScreen';
 import { useEffect } from 'react';
 
 const Stack = createNativeStackNavigator();
 
-const { darkTheme: adaptedDarkTheme } = adaptNavigationTheme({
+const { DarkTheme: adaptedDarkTheme } = adaptNavigationTheme({
   reactNavigationLight: NavDarkTheme,
   reactNavigationDark: NavDarkTheme,
 });
@@ -41,11 +41,7 @@ export default function App() {
               />
             </>
           ) : (
-            <Stack.Screen
-              name="Auth"
-              component={AuthScreen}
-              options={{ headerShown: false }}
-            />
+            <Stack.Screen name="Auth" component={AuthScreen} options={{ headerShown: false }} />
           )}
         </Stack.Navigator>
       </NavigationContainer>
