@@ -12,9 +12,9 @@ main (protected) → develop → feature/*
 
 - **main** — Production-ready code. Only merge via PR with passing CI.
 - **develop** — Integration branch. All feature branches target this.
-- **feature/*** — New features or fixes. Naming: `feat/<short-description>`, `fix/<short-description>`
-- **release/*** — Cut from develop for release prep. Naming: `release/v1.2.0`
-- **hotfix/*** — Emergency fixes from main. Naming: `hotfix/<short-description>`
+- **feature/\*** — New features or fixes. Naming: `feat/<short-description>`, `fix/<short-description>`
+- **release/\*** — Cut from develop for release prep. Naming: `release/v1.2.0`
+- **hotfix/\*** — Emergency fixes from main. Naming: `hotfix/<short-description>`
 
 ## Conventional Commits
 
@@ -23,6 +23,7 @@ Format: `<type>(<scope>): <description>`
 Types: `feat`, `fix`, `refactor`, `style`, `docs`, `test`, `chore`, `ci`, `build`, `revert`
 
 Examples:
+
 - `feat(auth): add API key login screen`
 - `fix(dashboard): handle empty stats response`
 - `chore(deps): update expo to SDK 54.0.33`
@@ -46,13 +47,13 @@ Examples:
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run lint` | ESLint check (0 warnings) |
-| `npm run lint:fix` | ESLint auto-fix |
-| `npm run format` | Prettier format files |
-| `npm run format:check` | Prettier check |
-| `npm run typecheck` | TypeScript type check |
-| `npm run test` | Run Jest tests |
-| `npm run test:coverage` | Jest with coverage |
-| `npm run check-all` | All checks in sequence |
+| Command                 | Description               |
+| ----------------------- | ------------------------- |
+| `npm run lint`          | ESLint check (0 warnings) |
+| `npm run lint:fix`      | ESLint auto-fix           |
+| `npm run format`        | Prettier format files     |
+| `npm run format:check`  | Prettier check            |
+| `npm run typecheck`     | TypeScript type check     |
+| `npm run test`          | Run Jest tests            |
+| `npm run test:coverage` | Jest with coverage        |
+| `npm run check-all`     | All checks in sequence    |

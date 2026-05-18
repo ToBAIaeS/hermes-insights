@@ -8,8 +8,8 @@ assignees: ''
 
 ## Description
 
-
 ## Type of Change
+
 - [ ] feat: New feature
 - [ ] fix: Bug fix
 - [ ] refactor: Code refactoring (no feature/fix)
@@ -19,11 +19,13 @@ assignees: ''
 - [ ] chore: Build/CI/tooling
 
 ## Testing
+
 - [ ] Unit tests pass (`npm test`)
 - [ ] TypeScript compiles (`npx tsc --noEmit`)
 - [ ] Lint passes (`npx eslint .`)
 
 ## Checklist
+
 - [ ] Conventional commit message used
 - [ ] Self-reviewed the diff
 - [ ] No unnecessary `console.log` statements

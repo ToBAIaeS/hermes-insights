@@ -60,12 +60,12 @@ CI enforces all checks on every push to `main` and `develop`.
 
 ### Build Profiles (eas.json)
 
-| Profile | iOS | Android | Distribution |
-|---------|-----|---------|--------------|
-| `development` | Simulator | APK | Internal |
-| `simulator` | Simulator | — | Internal |
-| `preview` | — | APK | Internal |
-| `production` | App Store | Play Store | Store |
+| Profile       | iOS       | Android    | Distribution |
+| ------------- | --------- | ---------- | ------------ |
+| `development` | Simulator | APK        | Internal     |
+| `simulator`   | Simulator | —          | Internal     |
+| `preview`     | —         | APK        | Internal     |
+| `production`  | App Store | Play Store | Store        |
 
 ### Build Commands
 
@@ -105,8 +105,8 @@ Production builds (e.g. `v1.0.0`, `v2.0.0`) also trigger the `production-build` 
 
 ### Required GitHub Secrets
 
-| Secret | Purpose |
-|--------|---------|
+| Secret       | Purpose                           |
+| ------------ | --------------------------------- |
 | `EXPO_TOKEN` | Expo authentication for EAS Build |
 
 ## Architecture
@@ -125,6 +125,7 @@ src/
 ## Git Workflow
 
 See [docs/CONVENTIONS.md](docs/CONVENTIONS.md) for:
+
 - Branch strategy (main/develop/feature)
 - Conventional commits format
 - PR process and review requirements
